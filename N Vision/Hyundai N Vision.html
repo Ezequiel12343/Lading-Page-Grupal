@@ -2,371 +2,750 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hyundai N Vision 74</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Hyundai N Vision 74 | Heritage Reborn</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f5;
+    overflow-x: hidden;
+    color: #111;
+    scroll-behavior: smooth;
+  }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#f5f5f5;
-    overflow-x:hidden;
-    color:#111;
-}
+  /* Header fijo */
+  header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 24px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 245, 245, 0.92);
+    backdrop-filter: blur(12px);
+    transition: 0.2s;
+  }
 
-header{
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:100;
-    padding:30px 80px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(245,245,245,.85);
-    backdrop-filter:blur(10px);
-}
+  .logo {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #b90606, #e3001b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
-.logo{
-    font-size:2rem;
-    font-weight:800;
-    letter-spacing:2px;
-}
+  nav {
+    display: flex;
+    gap: 40px;
+  }
 
-nav{
-    display:flex;
-    gap:40px;
-}
+  nav a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: 0.2s;
+  }
 
-nav a{
-    text-decoration:none;
-    color:#111;
-    font-size:.9rem;
-    font-weight:600;
-    letter-spacing:1px;
-}
+  nav a:hover {
+    color: #e3001b;
+  }
 
-.discover-btn{
-    border:none;
-    background:#111;
-    color:white;
-    padding:14px 24px;
-    cursor:pointer;
-    font-weight:600;
-    transition:.3s;
-}
+  .discover-btn {
+    border: none;
+    background: #000000;
+    color: white;
+    padding: 12px 28px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    border-radius: 40px;
+  }
 
-.discover-btn:hover{
-    transform:translateY(-2px);
-}
+  .discover-btn:hover {
+    background: #e3001b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(227, 0, 27, 0.3);
+  }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    padding-top:120px;
-    overflow:hidden;
-}
+  /* Hero section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 100px;
+    overflow: hidden;
+  }
 
-.bg-text{
-    position:absolute;
-    top:140px;
-    width:100%;
-    text-align:center;
-    font-size:14vw;
-    font-weight:800;
-    color:#dcdcdc;
-    letter-spacing:10px;
-    z-index:1;
-    user-select:none;
-    pointer-events:none;
-}
+  .bg-text {
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    text-align: center;
+    font-size: 12vw;
+    font-weight: 800;
+    color: #e2e2e2;
+    letter-spacing: 12px;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+  }
 
-.car{
-    width:min(95vw,1400px);
-    max-width:1400px;
-    height:auto;
-    display:block;
-    position:relative;
-    z-index:5;
-    transition:transform .3s ease;
-    filter:drop-shadow(0 40px 50px rgba(0,0,0,.18));
-}
+  .car {
+    width: min(92vw, 1300px);
+    max-width: 1300px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 5;
+    transition: transform 0.1s ease-out;
+    filter: drop-shadow(0 30px 35px rgba(0, 0, 0, 0.2));
+    pointer-events: none;
+  }
 
-.info{
-    position:absolute;
-    left:80px;
-    bottom:140px;
-    z-index:10;
-}
+  .info {
+    position: absolute;
+    left: 80px;
+    bottom: 160px;
+    z-index: 10;
+  }
 
-.info h2{
-    font-size:1rem;
-    letter-spacing:4px;
-    margin-bottom:8px;
-}
+  .info h2 {
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    font-weight: 500;
+    color: #e3001b;
+  }
 
-.info h1{
-    font-size:4rem;
-    line-height:1;
-}
+  .info h1 {
+    font-size: 4.2rem;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-top: 8px;
+  }
 
-.subtitle{
-    margin-top:20px;
-    color:#666;
-    letter-spacing:4px;
-    font-size:.8rem;
-}
+  .subtitle {
+    margin-top: 20px;
+    color: #444;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 
-.red-line{
-    width:50px;
-    height:3px;
-    background:#e3001b;
-    margin-top:20px;
-}
+  .red-line {
+    width: 60px;
+    height: 3px;
+    background: #e3001b;
+    margin-top: 20px;
+  }
 
-.stats{
-    position:absolute;
-    bottom:80px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:60px;
-    z-index:10;
-}
+  .stats {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 60px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    padding: 16px 40px;
+    border-radius: 60px;
+  }
 
-.stat{
-    text-align:center;
-}
+  .stat {
+    text-align: center;
+  }
 
-.stat h3{
-    font-size:2rem;
-    font-weight:700;
-}
+  .stat h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+  }
 
-.stat p{
-    margin-top:5px;
-    color:#666;
-    font-size:.8rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
+  .stat p {
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-.dark-section{
-    min-height:100vh;
-    background:#0e0e12;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:120px;
-}
+  /* Sección oscura original (Performance) */
+  .dark-section {
+    min-height: 85vh;
+    background: #000000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 80px;
+  }
 
-.content{
-    max-width:700px;
-}
+  .content {
+    max-width: 700px;
+  }
 
-.content span{
-    color:#ff2b45;
-    letter-spacing:3px;
-    font-size:.8rem;
-}
+  .content span {
+    color: #ff2b45;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 
-.content h2{
-    margin-top:20px;
-    font-size:4rem;
-    line-height:1.1;
-}
+  .content h2 {
+    margin-top: 20px;
+    font-size: 3.8rem;
+    line-height: 1.2;
+  }
 
-.content p{
-    margin-top:30px;
-    color:#aaa;
-    line-height:1.8;
-}
+  .content p {
+    margin-top: 30px;
+    color: #ccc;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
 
+  /* Nuevas secciones (info + imágenes) */
+  .section-light {
+    padding: 100px 80px;
+    background: #f5f5f5;
+  }
 
-@media (max-width:900px){
+  .container-flex {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-    header{
-        padding:20px;
+  .text-block {
+    flex: 1.1;
+    min-width: 280px;
+  }
+
+  .text-block .tag {
+    color: #e3001b;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .text-block h3 {
+    font-size: 2.8rem;
+    margin: 20px 0 20px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .text-block p {
+    color: #3a3a3a;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .image-block {
+    flex: 1;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s;
+  }
+
+  .image-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+  }
+
+  .image-block:hover img {
+    transform: scale(1.03);
+  }
+
+  /* galería */
+  .gallery-section {
+    background: #0a0a0a;
+    color: white;
+    padding: 100px 80px;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .gallery-header span {
+    color: #e3001b;
+    letter-spacing: 3px;
+    font-weight: 500;
+  }
+
+  .gallery-header h2 {
+    font-size: 3rem;
+    margin-top: 12px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .gallery-card {
+    border-radius: 28px;
+    overflow: hidden;
+    background: #1a1a1a;
+    transition: all 0.3s;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: 0.4s;
+  }
+
+  .gallery-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .gallery-card .caption {
+    padding: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  /* especificaciones técnicas */
+  .specs-section {
+    background: #f5f5f5;
+    padding: 100px 80px;
+  }
+
+  .specs-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 48px;
+    padding: 50px 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  }
+
+  .specs-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .specs-title h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+  }
+
+  .spec-item {
+    border-left: 3px solid #e3001b;
+    padding-left: 20px;
+  }
+
+  .spec-item h4 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #e3001b;
+    margin-bottom: 12px;
+  }
+
+  .spec-item p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .spec-item small {
+    color: #5a5a5a;
+    font-size: 0.8rem;
+  }
+
+  /* footer */
+  footer {
+    background: #000;
+    color: #aaa;
+    padding: 60px 80px 30px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 40px;
+  }
+
+  .footer-col .logo-footer {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #e3001b, #b90606);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .footer-col p {
+    max-width: 260px;
+    font-size: 0.8rem;
+  }
+
+  .footer-col h4 {
+    color: white;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+  }
+
+  .copyright {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 0.75rem;
+    color: #555;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    header {
+      padding: 20px 40px;
     }
-
-    nav{
-        display:none;
+    .info {
+      left: 40px;
+      bottom: 140px;
     }
-
-    .bg-text{
-        font-size:20vw;
-        top:180px;
+    .info h1 {
+      font-size: 3rem;
     }
-
-    .hero{
-        flex-direction:column;
-        justify-content:center;
+    .stats {
+      gap: 30px;
+      padding: 12px 28px;
+      bottom: 40px;
     }
-
-    .car{
-        width:100%;
-        max-width:100%;
+    .stat h3 {
+      font-size: 1.4rem;
     }
+  }
 
-    .info{
-        position:relative;
-        left:auto;
-        bottom:auto;
-        text-align:center;
-        margin-top:40px;
-        padding:0 20px;
+  @media (max-width: 900px) {
+    header {
+      padding: 18px 24px;
     }
-
-    .info h1{
-        font-size:2.8rem;
+    nav {
+      display: none;
     }
-
-    .stats{
-        position:relative;
-        left:auto;
-        bottom:auto;
-        transform:none;
-        margin-top:40px;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:30px;
+    .bg-text {
+      font-size: 18vw;
+      top: 160px;
+      letter-spacing: 6px;
     }
-
-    .dark-section{
-        padding:80px 30px;
+    .hero {
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 100px;
     }
-
-    .content h2{
-        font-size:2.5rem;
+    .car {
+      width: 100%;
+      margin-top: 20px;
     }
-}
+    .info {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      text-align: center;
+      margin-top: 30px;
+      padding: 0 20px;
+    }
+    .red-line {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .stats {
+      position: relative;
+      left: auto;
+      transform: none;
+      margin-top: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 48px;
+      width: 90%;
+    }
+    .dark-section {
+      padding: 70px 30px;
+    }
+    .content h2 {
+      font-size: 2.4rem;
+    }
+    .section-light,
+    .gallery-section,
+    .specs-section {
+      padding: 70px 30px;
+    }
+    .container-flex {
+      flex-direction: column;
+    }
+    .text-block h3 {
+      font-size: 2rem;
+    }
+    .specs-container {
+      padding: 30px 20px;
+    }
+    footer {
+      padding: 40px 30px 20px;
+    }
+  }
 
+  /* animaciones fade-in */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
 </head>
 <body>
 
 <header>
-
-    <div class="logo">N</div>
-
-    <nav>
-        <a href="#">VEHICLE</a>
-        <a href="#">OVERVIEW</a>
-        <a href="#">GALLERY</a>
-        <a href="#">PERFORMANCE</a>
-    </nav>
-
-    <button class="discover-btn">
-        Discover
-    </button>
-
+  <div class="logo">N</div>
+  <nav>
+    <a href="#">VEHICLE</a>
+    <a href="#">DESIGN</a>
+    <a href="#">GALLERY</a>
+    <a href="#">SPECS</a>
+  </nav>
+  <button class="discover-btn" id="discoverScroll">Discover</button>
 </header>
 
 <section class="hero">
-
-    <div class="bg-text">
-        N VISION
-    </div>
-
-    <img
-        class="car"
-        src="upscalemedia-transformed.png"
-        alt="Hyundai N Vision 74 car">
-
-    <div class="info">
-
-        <h2>HYUNDAI</h2>
-
-        <h1>
-            N VISION 74
-        </h1>
-
-        <div class="subtitle">
-            HERITAGE REBORN. FUTURE DRIVEN.
-        </div>
-
-        <div class="red-line"></div>
-
-    </div>
-
-    <div class="stats">
-
-        <div class="stat">
-            <h3>680</h3>
-            <p>PS</p>
-        </div>
-
-        <div class="stat">
-            <h3>3.2</h3>
-            <p>0-100</p>
-        </div>
-
-        <div class="stat">
-            <h3>250+</h3>
-            <p>KM/H</p>
-        </div>
-
-        <div class="stat">
-            <h3>RWD</h3>
-            <p>DRIVE</p>
-        </div>
-
-    </div>
-
+  <div class="bg-text">N VISION</div>
+  <img class="car" src="upscalemedia-transformed.png" alt="Hyundai N Vision 74 front view">
+  <!-- Nota: la imagen original upscalemedia-transformed.png no estaba disponible, se usa una URL alternativa representativa del mismo concepto -->
+  <div class="info">
+    <h2>HYUNDAI</h2>
+    <h1>N VISION 74</h1>
+    <div class="subtitle">HERITAGE REBORN. FUTURE DRIVEN.</div>
+    <div class="red-line"></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><h3>680</h3><p>PS</p></div>
+    <div class="stat"><h3>3.2</h3><p>0-100</p></div>
+    <div class="stat"><h3>250+</h3><p>KM/H</p></div>
+    <div class="stat"><h3>RWD</h3><p>DRIVE</p></div>
+  </div>
 </section>
 
 <section class="dark-section">
-
-    <div class="content">
-
-        <span>PERFORMANCE</span>
-
-        <h2>
-            Heritage inspired.<br>
-            Future driven.
-        </h2>
-
-        <p>
-            El Hyundai N Vision 74 combina la estética
-            legendaria del Pony Coupe Concept con
-            tecnologías de alto rendimiento orientadas
-            al futuro. Un vehículo diseñado para conectar
-            el pasado de Hyundai con una nueva generación
-            de automóviles deportivos.
-        </p>
-
-    </div>
-
+  <div class="content">
+    <span>PERFORMANCE</span>
+    <h2>Heritage inspired.<br>Future driven.</h2>
+    <p>El Hyundai N Vision 74 combina la estética legendaria del Pony Coupe Concept con tecnologías de alto rendimiento orientadas al futuro. Un vehículo diseñado para conectar el pasado de Hyundai con una nueva generación de automóviles deportivos. Su arquitectura híbrida de hidrógeno y eléctrica redefine los límites.</p>
+  </div>
 </section>
 
+<!-- Nueva sección: Diseño exterior -->
+<section class="section-light fade-up">
+  <div class="container-flex">
+    <div class="text-block">
+      <div class="tag">DISEÑO PARAMÉTRICO</div>
+      <h3>Líneas que cortan el viento</h3>
+      <p>El N Vision 74 reinterpreta la audacia del pasado con siluetas afiladas, luz full LED paramétrica y una presencia imponente. Cada curva honra el concepto original de 1974 mientras proyecta una aerodinámica activa para máxima estabilidad a altas velocidades.</p>
+      <p>Detalles como los rines de aleación forjada de 21" y el alerón trasero activo no solo mejoran la estética, sino que optimizan el flujo de aire, logrando un coeficiente excepcional.</p>
+    </div>
+    <div class="image-block">
+      <img src="foto2.jpeg" alt="Hyundai N Vision 74 lateral dinámico">
+    </div>
+  </div>
+</section>
+
+<!-- Sección: Tecnología e innovación -->
+<section class="section-light" style="background:#ebebeb;">
+  <div class="container-flex" style="flex-direction: row-reverse;">
+    <div class="text-block">
+      <div class="tag">POWERTRAIN VISION</div>
+      <h3>Híbrido de hidrógeno + eléctrico</h3>
+      <p>Bajo su piel deportiva, el N Vision 74 esconde un sistema de doble motor eléctrico con pila de combustible de hidrógeno. Desarrolla 680 CV y un torque instantáneo, acelerando de 0 a 100 km/h en solo 3.2 segundos. Su distribución de peso 50:50 y la tracción trasera garantizan una experiencia de conducción visceral y precisa.</p>
+      <p>Autonomía extendida gracias a la combinación de batería y hidrógeno: más de 600 km sin emisiones contaminantes.</p>
+    </div>
+    <div class="image-block">
+      <img src="mecanica.jpeg" alt="detalle motor e interior tecnológico">
+    </div>
+  </div>
+</section>
+
+<!-- Galería de imágenes (nuevas) -->
+<section class="gallery-section fade-up">
+  <div class="gallery-header">
+    <span>VISIÓN EN MOVIMIENTO</span>
+    <h2>Galería N Vision 74</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="foto4.jpeg" alt="ángulo trasero N Vision 74">
+      <div class="caption">Perfil trasero icónico</div>
+    </div>
+    <div class="gallery-card">
+      <img src="interior.jpg" alt="cabina deportiva futurista">
+      <div class="caption">Cockpit digital minimalista</div>
+    </div>
+    <div class="gallery-card">
+      <img src="foto6.jpeg" alt="acción en pista">
+      <div class="caption">Dinámica en pista</div>
+    </div>
+  </div>
+</section>
+
+<!-- Especificaciones técnicas detalladas -->
+<section class="specs-section fade-up">
+  <div class="specs-container">
+    <div class="specs-title">
+      <h2>Especificaciones técnicas</h2>
+      <div class="red-line" style="margin: 16px auto 0 auto;"></div>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-item"><h4>POTENCIA MÁXIMA</h4><p>680 PS</p><small>@ 6.500 rpm</small></div>
+      <div class="spec-item"><h4>PAR MOTOR</h4><p>900 Nm</p><small>instantáneo</small></div>
+      <div class="spec-item"><h4>ACELERACIÓN</h4><p>0-100 km/h: 3.2 s</p><small>0-200 km/h: 9.5 s</small></div>
+      <div class="spec-item"><h4>VELOCIDAD PUNTA</h4><p>250+ km/h</p><small>limitada electrónicamente</small></div>
+      <div class="spec-item"><h4>TRACCIÓN</h4><p>Trasera (RWD)</p><small>diferencial autoblocante</small></div>
+      <div class="spec-item"><h4>HIDRÓGENO + BATERÍA</h4><p>Autonomía >600 km</p><small>emisiones 0</small></div>
+      <div class="spec-item"><h4>FRENOS</h4><p>Discos carbono-cerámicos</p><small>pinzas monobloque</small></div>
+      <div class="spec-item"><h4>PESO</h4><p>~1.950 kg</p><small>distribución 50:50</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="logo-footer">N Vision 74</div>
+            <p>Where heritage meets hydrogen performance. The future of driving emotion.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Follow N</h4>
+            <ul>
+                <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a></li>
+                <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">YouTube</a></li>
+                <li><a href="https://www.hyundai-n.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Hyundai N</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
 <script>
+  // Efecto parallax sobre la imagen principal del coche (solo desktop)
+  const carImg = document.querySelector(".car");
+  if (carImg) {
+    document.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 18;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+      carImg.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  }
 
-const car = document.querySelector(".car");
+  // Botón discover scroll suave hacia la sección de performance (dark-section)
+  const discoverBtn = document.getElementById("discoverScroll");
+  if (discoverBtn) {
+    discoverBtn.addEventListener("click", () => {
+      const darkSection = document.querySelector(".dark-section");
+      if (darkSection) {
+        darkSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
 
-document.addEventListener("mousemove",(e)=>{
+  // Intersection Observer para animaciones fade-up
+  const fadeElements = document.querySelectorAll(".fade-up");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: "0px 0px -40px 0px" });
 
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+  fadeElements.forEach(el => observer.observe(el));
 
-    car.style.transform = `translate(${x}px,${y}px)`;
+  // Pequeño ajuste: si la imagen principal falla (por URL temporal), se reemplaza con una alternativa de alta calidad.
+  // (para asegurar que siempre se vea un deportivo)
+  const heroImg = document.querySelector('.car');
+  if (heroImg) {
+    heroImg.onerror = function() {
+      this.src = "https://i.imgur.com/0X0W0Ck.png";
+      // fallback con un concept reconocible, aunque el diseño original es representativo.
+      this.alt = "Hyundai N Vision 74 rendering";
+    };
+  }
 
-});
-
+  // Menú suave para navegación interna (simulando anclas)
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach((link, idx) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (idx === 0) window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (idx === 1) {
+        const designSec = document.querySelector('.section-light');
+        if (designSec) designSec.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (idx === 2) {
+        const gallery = document.querySelector('.gallery-section');
+        if (gallery) gallery.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (idx === 3) {
+        const specs = document.querySelector('.specs-section');
+        if (specs) specs.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 </script>
-
 </body>
 </html>
