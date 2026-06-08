@@ -20,7 +20,6 @@
     scroll-behavior: smooth;
   }
 
-  /* Header fijo */
   header {
     width: 100%;
     position: fixed;
@@ -83,7 +82,6 @@
     box-shadow: 0 8px 20px rgba(227, 0, 27, 0.3);
   }
 
-  /* Hero section */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -190,7 +188,6 @@
     letter-spacing: 1px;
   }
 
-  /* Sección oscura original (Performance) */
   .dark-section {
     min-height: 85vh;
     background: #000000;
@@ -225,7 +222,6 @@
     font-size: 1rem;
   }
 
-  /* Nuevas secciones (info + imágenes) */
   .section-light {
     padding: 100px 80px;
     background: #f5f5f5;
@@ -284,7 +280,6 @@
     transform: scale(1.03);
   }
 
-  /* galería */
   .gallery-section {
     background: #0a0a0a;
     color: white;
@@ -339,7 +334,6 @@
     letter-spacing: 0.5px;
   }
 
-  /* especificaciones técnicas */
   .specs-section {
     background: #f5f5f5;
     padding: 100px 80px;
@@ -393,7 +387,6 @@
     font-size: 0.8rem;
   }
 
-  /* footer */
   footer {
     background: #000;
     color: #aaa;
@@ -446,7 +439,6 @@
     color: #555;
   }
 
-  /* Responsive */
   @media (max-width: 1024px) {
     header {
       padding: 20px 40px;
@@ -538,7 +530,6 @@
     }
   }
 
-  /* animaciones fade-in */
   .fade-up {
     opacity: 0;
     transform: translateY(35px);
@@ -566,7 +557,6 @@
 <section class="hero">
   <div class="bg-text">N VISION</div>
   <img class="car" src="upscalemedia-transformed.png" alt="Hyundai N Vision 74 front view">
-  <!-- Nota: la imagen original upscalemedia-transformed.png no estaba disponible, se usa una URL alternativa representativa del mismo concepto -->
   <div class="info">
     <h2>HYUNDAI</h2>
     <h1>N VISION 74</h1>
@@ -589,7 +579,6 @@
   </div>
 </section>
 
-<!-- Nueva sección: Diseño exterior -->
 <section class="section-light fade-up">
   <div class="container-flex">
     <div class="text-block">
@@ -604,7 +593,6 @@
   </div>
 </section>
 
-<!-- Sección: Tecnología e innovación -->
 <section class="section-light" style="background:#ebebeb;">
   <div class="container-flex" style="flex-direction: row-reverse;">
     <div class="text-block">
@@ -619,7 +607,6 @@
   </div>
 </section>
 
-<!-- Galería de imágenes (nuevas) -->
 <section class="gallery-section fade-up">
   <div class="gallery-header">
     <span>VISIÓN EN MOVIMIENTO</span>
@@ -641,7 +628,6 @@
   </div>
 </section>
 
-<!-- Especificaciones técnicas detalladas -->
 <section class="specs-section fade-up">
   <div class="specs-container">
     <div class="specs-title">
@@ -661,7 +647,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <div class="footer-content">
         <div class="footer-col">
@@ -681,7 +666,6 @@
 </footer>
 
 <script>
-  // Efecto parallax sobre la imagen principal del coche (solo desktop)
   const carImg = document.querySelector(".car");
   if (carImg) {
     document.addEventListener("mousemove", (e) => {
@@ -691,7 +675,6 @@
     });
   }
 
-  // Botón discover scroll suave hacia la sección de performance (dark-section)
   const discoverBtn = document.getElementById("discoverScroll");
   if (discoverBtn) {
     discoverBtn.addEventListener("click", () => {
@@ -702,7 +685,6 @@
     });
   }
 
-  // Intersection Observer para animaciones fade-up
   const fadeElements = document.querySelectorAll(".fade-up");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -715,18 +697,14 @@
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // Pequeño ajuste: si la imagen principal falla (por URL temporal), se reemplaza con una alternativa de alta calidad.
-  // (para asegurar que siempre se vea un deportivo)
   const heroImg = document.querySelector('.car');
   if (heroImg) {
     heroImg.onerror = function() {
       this.src = "https://i.imgur.com/0X0W0Ck.png";
-      // fallback con un concept reconocible, aunque el diseño original es representativo.
       this.alt = "Hyundai N Vision 74 rendering";
     };
   }
 
-  // Menú suave para navegación interna (simulando anclas)
   const navLinks = document.querySelectorAll('nav a');
   navLinks.forEach((link, idx) => {
     link.addEventListener('click', (e) => {
