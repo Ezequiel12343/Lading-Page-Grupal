@@ -14,12 +14,13 @@
 
   body {
     font-family: 'Inter', sans-serif;
-    background: #f5f5f5;
+    background: #ffffff;
     overflow-x: hidden;
     color: #111;
     scroll-behavior: smooth;
   }
 
+  /* Header fijo */
   header {
     width: 100%;
     position: fixed;
@@ -82,6 +83,7 @@
     box-shadow: 0 8px 20px rgba(227, 0, 27, 0.3);
   }
 
+  /* Hero section */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -99,7 +101,7 @@
     text-align: center;
     font-size: 12vw;
     font-weight: 800;
-    color: #e2e2e2;
+    color: #aaa7a7;
     letter-spacing: 12px;
     z-index: 1;
     user-select: none;
@@ -188,6 +190,7 @@
     letter-spacing: 1px;
   }
 
+  /* Sección oscura original (Performance) */
   .dark-section {
     min-height: 85vh;
     background: #000000;
@@ -222,6 +225,7 @@
     font-size: 1rem;
   }
 
+  /* Nuevas secciones (info + imágenes) */
   .section-light {
     padding: 100px 80px;
     background: #f5f5f5;
@@ -280,6 +284,7 @@
     transform: scale(1.03);
   }
 
+  /* galería */
   .gallery-section {
     background: #0a0a0a;
     color: white;
@@ -334,6 +339,7 @@
     letter-spacing: 0.5px;
   }
 
+  /* especificaciones técnicas */
   .specs-section {
     background: #f5f5f5;
     padding: 100px 80px;
@@ -387,9 +393,10 @@
     font-size: 0.8rem;
   }
 
+  /* footer */
   footer {
     background: #000;
-    color: #aaa;
+    color: #7e7979;
     padding: 60px 80px 30px;
   }
 
@@ -439,6 +446,7 @@
     color: #555;
   }
 
+  /* Responsive */
   @media (max-width: 1024px) {
     header {
       padding: 20px 40px;
@@ -530,6 +538,7 @@
     }
   }
 
+  /* animaciones fade-in */
   .fade-up {
     opacity: 0;
     transform: translateY(35px);
@@ -544,19 +553,22 @@
 <body>
 
 <header>
-  <div class="logo">N</div>
+  <div class="logo">
+    <img src="img_logo.png" alt="N Vision 74 logo" style="height: 32px; width: auto;">
+  </div>
   <nav>
     <a href="#">VEHICLE</a>
     <a href="#">DESIGN</a>
     <a href="#">GALLERY</a>
     <a href="#">SPECS</a>
   </nav>
-  <button class="discover-btn" id="discoverScroll">Discover</button>
+  <button class="discover-btn" id="discoverScroll" onclick="window.location.href='https://www.hyundai-n.com/';">Discover</button>
 </header>
 
 <section class="hero">
   <div class="bg-text">N VISION</div>
   <img class="car" src="upscalemedia-transformed.png" alt="Hyundai N Vision 74 front view">
+  <!-- Nota: la imagen original upscalemedia-transformed.png no estaba disponible, se usa una URL alternativa representativa del mismo concepto -->
   <div class="info">
     <h2>HYUNDAI</h2>
     <h1>N VISION 74</h1>
@@ -564,7 +576,7 @@
     <div class="red-line"></div>
   </div>
   <div class="stats">
-    <div class="stat"><h3>680</h3><p>PS</p></div>
+    <div class="stat"><h3>500</h3><p>KW</p></div>
     <div class="stat"><h3>3.2</h3><p>0-100</p></div>
     <div class="stat"><h3>250+</h3><p>KM/H</p></div>
     <div class="stat"><h3>RWD</h3><p>DRIVE</p></div>
@@ -579,6 +591,7 @@
   </div>
 </section>
 
+<!-- Nueva sección: Diseño exterior -->
 <section class="section-light fade-up">
   <div class="container-flex">
     <div class="text-block">
@@ -593,6 +606,7 @@
   </div>
 </section>
 
+<!-- Sección: Tecnología e innovación -->
 <section class="section-light" style="background:#ebebeb;">
   <div class="container-flex" style="flex-direction: row-reverse;">
     <div class="text-block">
@@ -607,6 +621,7 @@
   </div>
 </section>
 
+<!-- Galería de imágenes (nuevas) -->
 <section class="gallery-section fade-up">
   <div class="gallery-header">
     <span>VISIÓN EN MOVIMIENTO</span>
@@ -628,6 +643,7 @@
   </div>
 </section>
 
+<!-- Especificaciones técnicas detalladas -->
 <section class="specs-section fade-up">
   <div class="specs-container">
     <div class="specs-title">
@@ -635,7 +651,7 @@
       <div class="red-line" style="margin: 16px auto 0 auto;"></div>
     </div>
     <div class="specs-grid">
-      <div class="spec-item"><h4>POTENCIA MÁXIMA</h4><p>680 PS</p><small>@ 6.500 rpm</small></div>
+      <div class="spec-item"><h4>POTENCIA MÁXIMA</h4><p>500 KW/671 CV</p><small>@ 6.500 rpm</small></div>
       <div class="spec-item"><h4>PAR MOTOR</h4><p>900 Nm</p><small>instantáneo</small></div>
       <div class="spec-item"><h4>ACELERACIÓN</h4><p>0-100 km/h: 3.2 s</p><small>0-200 km/h: 9.5 s</small></div>
       <div class="spec-item"><h4>VELOCIDAD PUNTA</h4><p>250+ km/h</p><small>limitada electrónicamente</small></div>
@@ -643,10 +659,12 @@
       <div class="spec-item"><h4>HIDRÓGENO + BATERÍA</h4><p>Autonomía >600 km</p><small>emisiones 0</small></div>
       <div class="spec-item"><h4>FRENOS</h4><p>Discos carbono-cerámicos</p><small>pinzas monobloque</small></div>
       <div class="spec-item"><h4>PESO</h4><p>~1.950 kg</p><small>distribución 50:50</small></div>
+      <div class="spec-item"><h4>LENGUAJE DE DISEÑO</h4><p>Parametric pixel</p><small>comparado con el supra A60, lancia 037 stradale, dmc delorean o incluso el audi quattro</small></div>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
     <div class="footer-content">
         <div class="footer-col">
@@ -657,7 +675,7 @@
         <div class="footer-col">
             <h4>Follow N</h4>
             <ul>
-                <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a></li>
+                <li><a href="https://www.instagram.com/hyundai_n_worldwide/?__pwa=1" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a></li>
                 <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">YouTube</a></li>
                 <li><a href="https://www.hyundai-n.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Hyundai N</a></li>
             </ul>
@@ -666,6 +684,7 @@
 </footer>
 
 <script>
+  // Efecto parallax sobre la imagen principal del coche (solo desktop)
   const carImg = document.querySelector(".car");
   if (carImg) {
     document.addEventListener("mousemove", (e) => {
@@ -675,6 +694,7 @@
     });
   }
 
+  // Botón discover scroll suave hacia la sección de performance (dark-section)
   const discoverBtn = document.getElementById("discoverScroll");
   if (discoverBtn) {
     discoverBtn.addEventListener("click", () => {
@@ -685,6 +705,7 @@
     });
   }
 
+  // Intersection Observer para animaciones fade-up
   const fadeElements = document.querySelectorAll(".fade-up");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -697,14 +718,18 @@
 
   fadeElements.forEach(el => observer.observe(el));
 
+  // Pequeño ajuste: si la imagen principal falla (por URL temporal), se reemplaza con una alternativa de alta calidad.
+  // (para asegurar que siempre se vea un deportivo)
   const heroImg = document.querySelector('.car');
   if (heroImg) {
     heroImg.onerror = function() {
       this.src = "https://i.imgur.com/0X0W0Ck.png";
+      // fallback con un concept reconocible, aunque el diseño original es representativo.
       this.alt = "Hyundai N Vision 74 rendering";
     };
   }
 
+  // Menú suave para navegación interna (simulando anclas)
   const navLinks = document.querySelectorAll('nav a');
   navLinks.forEach((link, idx) => {
     link.addEventListener('click', (e) => {
