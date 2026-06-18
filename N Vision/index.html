@@ -20,7 +20,6 @@
     scroll-behavior: smooth;
   }
 
-  /* Header fijo */
   header {
     width: 100%;
     position: fixed;
@@ -83,7 +82,6 @@
     box-shadow: 0 8px 20px rgba(227, 0, 27, 0.3);
   }
 
-  /* Hero section */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -190,7 +188,6 @@
     letter-spacing: 1px;
   }
 
-  /* Sección oscura original (Performance) */
   .dark-section {
     min-height: 85vh;
     background: #000000;
@@ -225,7 +222,6 @@
     font-size: 1rem;
   }
 
-  /* Nuevas secciones (info + imágenes) */
   .section-light {
     padding: 100px 80px;
     background: #f5f5f5;
@@ -284,7 +280,6 @@
     transform: scale(1.03);
   }
 
-  /* galería */
   .gallery-section {
     background: #0a0a0a;
     color: white;
@@ -339,7 +334,6 @@
     letter-spacing: 0.5px;
   }
 
-  /* especificaciones técnicas */
   .specs-section {
     background: #f5f5f5;
     padding: 100px 80px;
@@ -393,7 +387,6 @@
     font-size: 0.8rem;
   }
 
-  /* footer */
   footer {
     background: #000;
     color: #7e7979;
@@ -446,7 +439,6 @@
     color: #555;
   }
 
-  /* Responsive */
   @media (max-width: 1024px) {
     header {
       padding: 20px 40px;
@@ -538,7 +530,6 @@
     }
   }
 
-  /* animaciones fade-in */
   .fade-up {
     opacity: 0;
     transform: translateY(35px);
@@ -568,7 +559,6 @@
 <section class="hero">
   <div class="bg-text">N VISION</div>
   <img class="car" src="upscalemedia-transformed.png" alt="Hyundai N Vision 74 front view">
-  <!-- Nota: la imagen original upscalemedia-transformed.png no estaba disponible, se usa una URL alternativa representativa del mismo concepto -->
   <div class="info">
     <h2>HYUNDAI</h2>
     <h1>N VISION 74</h1>
@@ -591,7 +581,6 @@
   </div>
 </section>
 
-<!-- Nueva sección: Diseño exterior -->
 <section class="section-light fade-up">
   <div class="container-flex">
     <div class="text-block">
@@ -606,7 +595,6 @@
   </div>
 </section>
 
-<!-- Sección: Tecnología e innovación -->
 <section class="section-light" style="background:#ebebeb;">
   <div class="container-flex" style="flex-direction: row-reverse;">
     <div class="text-block">
@@ -621,7 +609,35 @@
   </div>
 </section>
 
-<!-- Galería de imágenes (nuevas) -->
+<section class="section-light" style="background:#ebebeb;">
+  <div class="container-flex" style="flex-direction: row-reverse;">
+    <div class="text-block">
+      <div class="tag">ORIGIN OF THE VISION</div>
+      <h3>Un diseño inspirador.</h3>
+      <p>El Hyundai Pony Coupe de 1974 es un icónico modelo que debutó en el Salón del Automóvil de Turín. Este modelo fue diseñado por Giorgetto Giugiaro y se caracteriza por su diseño geométrico y líneas futuristas, inspiradas en el arte japonés de origami.</p>
+      <p>El Pony Coupe ha influido en otros modelos de Hyundai, como el Ioniq 5 y el N Vision 74, mostrando su legado en el diseño automotriz.
+        Este modelo no solo marcó el inicio de la producción masiva de automóviles en Corea, sino que también sentó las bases para el futuro de Hyundai en la industria automotriz.</p>
+    </div>
+    <div class="image-block">
+      <img src="Pony.jpeg" alt="hyundai pony coupe concept 1974">
+    </div>
+  </div>
+</section>
+
+<section class="section-light" style="background:#ebebeb;">
+  <div class="container-flex" style="flex-direction: row-reverse;">
+    <div class="text-block">
+      <div class="tag">REASON OF THE VISION</div>
+      <h3>Híbrido de hidrógeno + eléctrico, nacido como promocion.</h3>
+      <p>El Hyundai N 2025 Vision Gran Turismo (VGT) es un concepto de superdeportivo futurista, impulsado por tecnología de pila de combustible de hidrógeno, que combina un rendimiento extremo con un diseño aerodinámico y ligero inspirado en la aeronáutica.</p>
+      <p>El Hyundai N Vision 74 nace directamente de la visión técnica del N 2025 GT VGT, adaptando su motorización de hidrógeno avanzada hacia un híbrido FCEV + batería, con motores eléctricos vectorizados, para ofrecer rendimiento de superdeportivo con sostenibilidad real. Así, la innovación conceptual de 2015 se concreta en un vehículo de producción limitada, preservando el espíritu de pruebas tecnológicas y la excelencia en dinámica avanzada de la línea N.</p>
+    </div>
+    <div class="image-block">
+      <img src="VGT.jpeg" alt="hyundai pony coupe concept 1974">
+    </div>
+  </div>
+</section>
+
 <section class="gallery-section fade-up">
   <div class="gallery-header">
     <span>VISIÓN EN MOVIMIENTO</span>
@@ -643,7 +659,6 @@
   </div>
 </section>
 
-<!-- Especificaciones técnicas detalladas -->
 <section class="specs-section fade-up">
   <div class="specs-container">
     <div class="specs-title">
@@ -660,11 +675,14 @@
       <div class="spec-item"><h4>FRENOS</h4><p>Discos carbono-cerámicos</p><small>pinzas monobloque</small></div>
       <div class="spec-item"><h4>PESO</h4><p>~1.950 kg</p><small>distribución 50:50</small></div>
       <div class="spec-item"><h4>LENGUAJE DE DISEÑO</h4><p>Parametric pixel</p><small>comparado con el supra A60, lancia 037 stradale, dmc delorean o incluso el audi quattro</small></div>
+      <div class="spec-item"><h4>PREDECESOR</h4><p>Hyundai Pony Concept (1974)</p><small>Nacido para revolucionar la industria, este iconico modelo salio a la venta en el 75 y dio la base al Hyundai N Vision 74, 74 siendo la fecha de nacimiento de este coupe, y como ultimo pero no menos importante, fue inspiracion total para la maquina del volver al futuro: El DMC Delorean</small></div>
+      <div class="spec-item"><h4>IDEA Y RAZON</h4><p>Gran Turismo 6</p><small>Nacio como coche ficticio gracias a Poliphony Digital y Sony por medio del programa Vision Gran Turismo (VGT)</small></div>
+      <div class="spec-item"><h4>APARICIONES</h4><p>RennSport, Asphalt 8,9 legends, legends unite, Racing Master y los Forza despues del 4</p><small>El Vision 74 ha aparecido en juegos de carreras muy variopintos, desde Arcades, SimCades a Simuladores puros</small></div>
+
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <div class="footer-content">
         <div class="footer-col">
@@ -676,7 +694,7 @@
             <h4>Follow N</h4>
             <ul>
                 <li><a href="https://www.instagram.com/hyundai_n_worldwide/?__pwa=1" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a></li>
-                <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">YouTube</a></li>
+                <li><a href="https://www.youtube.com/@hyundainworldwide" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">YouTube</a></li>
                 <li><a href="https://www.hyundai-n.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Hyundai N</a></li>
             </ul>
         </div>
@@ -684,7 +702,6 @@
 </footer>
 
 <script>
-  // Efecto parallax sobre la imagen principal del coche (solo desktop)
   const carImg = document.querySelector(".car");
   if (carImg) {
     document.addEventListener("mousemove", (e) => {
@@ -694,7 +711,6 @@
     });
   }
 
-  // Botón discover scroll suave hacia la sección de performance (dark-section)
   const discoverBtn = document.getElementById("discoverScroll");
   if (discoverBtn) {
     discoverBtn.addEventListener("click", () => {
@@ -705,7 +721,6 @@
     });
   }
 
-  // Intersection Observer para animaciones fade-up
   const fadeElements = document.querySelectorAll(".fade-up");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -718,18 +733,14 @@
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // Pequeño ajuste: si la imagen principal falla (por URL temporal), se reemplaza con una alternativa de alta calidad.
-  // (para asegurar que siempre se vea un deportivo)
   const heroImg = document.querySelector('.car');
   if (heroImg) {
     heroImg.onerror = function() {
       this.src = "https://i.imgur.com/0X0W0Ck.png";
-      // fallback con un concept reconocible, aunque el diseño original es representativo.
       this.alt = "Hyundai N Vision 74 rendering";
     };
   }
 
-  // Menú suave para navegación interna (simulando anclas)
   const navLinks = document.querySelectorAll('nav a');
   navLinks.forEach((link, idx) => {
     link.addEventListener('click', (e) => {
